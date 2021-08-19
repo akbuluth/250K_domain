@@ -26,12 +26,10 @@ for each_file in all_files:
     file.close()
 
 sorted_result_list = sorted(result.items(), key=lambda x:x[1], reverse=True)
-result = dict(sorted_result_list[:250002])
+result = dict(sorted_result_list[:250000])
 
-result.pop("acs.doping.com.tr")
-result.pop("a.root-servers.net")
 
-final = open("MILLENICOM-GIH-DNS_250K-"+date.strftime("%Y%m%d")+".txt", "w")
+final = open("file_name"+date.strftime("%Y%m%d")+".txt", "w")
 
 for i in result:
     final.write(i + "|" + str(result[i]) + "\n")
